@@ -1,6 +1,5 @@
 *{
     border: 1px solid black;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
@@ -16,6 +15,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    position: sticky;
 }
 
 ul {
@@ -24,10 +24,14 @@ ul {
 
 .logo{
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto minmax(150px, 1fr);
     align-items: center;
     padding: 5px;
     gap: 2px;
+}
+
+h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
 }
 
 li {
@@ -36,11 +40,39 @@ li {
     align-items: center;
     padding: 5px;
     gap: 2px;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    margin-left: 5px;
 }
 
-.icon {
-    align-self: center;   
+a{
+    text-decoration: none;
+    color: currentColor;
 }
 
-.logo .icon {
+.sidebar p{
+    width: max-content;
 }
+
+li>div:hover+p, li>p:hover{
+    text-decoration: underline;
+    text-shadow: 1px 1px currentColor;
+    transform: translateY(-2px);
+}
+
+a img:hover, .hovered img{
+    filter: drop-shadow(0 0 0.1rem gray);
+    transform: translateY(-2px);
+}
+
+.searchbar, .profile-bar {
+    display: flex;
+    justify-items: space-between;
+}
+
+input[type='search'], .greetings{
+    margin-right: auto;
+}
+
+
+
+
