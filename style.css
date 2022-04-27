@@ -1,5 +1,4 @@
 *{
-    border: 1px solid black;
     margin: 0;
     padding: 0;
 }
@@ -8,14 +7,19 @@
     display: grid;
     grid-template-columns: 1fr 4fr;
     grid-template-rows: auto 1fr;
+    position: relative;
 }
 
 .sidebar {
     grid-row: 1/3;
+}
+
+.sidebar-container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
     position: sticky;
+    top: 0;
 }
 
 ul {
@@ -47,6 +51,9 @@ li {
 a{
     text-decoration: none;
     color: currentColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sidebar p{
@@ -63,9 +70,10 @@ li>div:hover+p, li>p:hover, button:hover{
     height: min-content;
 }
 
-.icon img:hover, .hovered img {
+.icon img:hover, .hovered img, .icons img:hover {
     filter: drop-shadow(0 0 0.1rem gray);
     transform: translateY(-2px);
+    cursor: pointer;
 }
 
 .searchbar, .profile-bar {
@@ -75,6 +83,16 @@ li>div:hover+p, li>p:hover, button:hover{
     gap: 10px;
     align-items: center;
     padding-left: 2%;
+}
+
+.header {
+    position: sticky;
+    top: -4rem;
+}
+
+.searchbar {
+    position: sticky;
+    top: 0;
 }
 
 .profile-bar {
@@ -93,7 +111,7 @@ input {
     height: 25px;
 }
 
-#bell img {
+#bell img, label {
     cursor: pointer;
 }
 
@@ -117,6 +135,53 @@ input {
 button:active {
     transform: translateY(0px);
 }
+
+.content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.projects {
+    padding: 10px;
+    padding-left: 3%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 10px;
+}
+
+.card {
+    height: 200px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    gap: 2px;
+    padding: 10px;
+}
+
+.icons {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+}
+
+.sidecard {
+    width: 5px;
+    background-color: currentColor;
+    border-radius: 20px 0 0 20px;
+}
+
 
 
 

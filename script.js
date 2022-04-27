@@ -27,3 +27,32 @@ function toggleBell() {
     bellAux--;
     }
 }
+
+let star = document.getElementsByClassName('star');
+for (i=0; i<star.length; i++)
+star[i].addEventListener('click', toggle);
+let starAux;
+let starInd = [];
+
+let cards = document.getElementsByClassName('card');
+
+const arrStar = Array.from(cards);
+
+for(i=0; i<cards.length; i++) {
+    cards[i].addEventListener('mouseenter', (e) => {
+        starAux = arrStar.findIndex((element)=> element.textContent == e.path[0].textContent);
+    });
+    starInd[i]= 0;
+}
+
+function toggle() {
+    if (starInd[starAux] == 0){
+        star[starAux].src = 'icons/star.svg';
+        starInd[starAux]++;
+    }
+    else {
+        star[starAux].src = 'icons/star-outline.svg';
+        starInd[starAux]--;
+    }
+}
+
