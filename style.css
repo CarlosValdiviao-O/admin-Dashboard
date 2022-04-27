@@ -53,13 +53,17 @@ a{
     width: max-content;
 }
 
-li>div:hover+p, li>p:hover{
+li>div:hover+p, li>p:hover, button:hover{
     text-decoration: underline;
     text-shadow: 1px 1px currentColor;
     transform: translateY(-2px);
 }
 
-a img:hover, .hovered img{
+.icon {
+    height: min-content;
+}
+
+.icon img:hover, .hovered img {
     filter: drop-shadow(0 0 0.1rem gray);
     transform: translateY(-2px);
 }
@@ -67,11 +71,57 @@ a img:hover, .hovered img{
 .searchbar, .profile-bar {
     display: flex;
     justify-items: space-between;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+    padding-left: 2%;
+}
+
+.profile-bar {
+    padding-top: 0px;
+    flex-wrap: wrap;
 }
 
 input[type='search'], .greetings{
     margin-right: auto;
 }
+
+input {
+    border-radius: 30px;
+    max-width: 30rem; 
+    flex: 1;
+    height: 25px;
+}
+
+#bell img {
+    cursor: pointer;
+}
+
+.profile img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.profile-bar .profile img {
+    width: 50px;
+    height: 50px;
+}
+
+.profile-bar button {
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+button:active {
+    transform: translateY(0px);
+}
+
+
+
+
+
 
 
 
